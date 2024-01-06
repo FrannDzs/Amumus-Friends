@@ -203,7 +203,7 @@ namespace Amumus_Friends
                             }
                         }
 
-                        var body = JsonConvert.SerializeObject(new { direction = "out", name = name });
+                        var body = JsonConvert.SerializeObject(new { direction = "out", name });
                         await leagueClient.Request(requestMethod.POST, "/lol-chat/v1/friend-requests", body);
                     }
                     catch (Exception ex)
