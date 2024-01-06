@@ -12,7 +12,7 @@ namespace Amumus_Friends
 {
     public partial class amumus_friends : MaterialForm
     {
-        public static LeagueClient leagueClient = new LeagueClient(credentials.cmd);
+        public static LeagueClient leagueClient = new(credentials.cmd);
 
         public void OnClientConnected()
         {
@@ -150,9 +150,9 @@ namespace Amumus_Friends
 
                 string fileName = "exported_friends_" + DateTime.Now.ToString("yyyyMMddHHmmsstt") + ".json";
                 string filePath = Path.Combine(exportsFolder, fileName);
-                using (StreamWriter file = new StreamWriter(filePath))
+                using (StreamWriter file = new(filePath))
                 {
-                    JsonSerializer serializer = new JsonSerializer();
+                    JsonSerializer serializer = new();
                     serializer.Serialize(file, friendDataList);
                 }
                 MessageBox.Show("Exported friends to " + filePath, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
