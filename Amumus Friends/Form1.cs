@@ -102,7 +102,7 @@ namespace Amumus_Friends
                     {
                         await leagueClient.Request(requestMethod.DELETE, "/lol-chat/v1/friends/" + friendPuuid);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                     }
 
