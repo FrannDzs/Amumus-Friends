@@ -148,7 +148,7 @@ namespace Amumus_Friends
                     Directory.CreateDirectory(exportsFolder);
                 }
 
-                string fileName = "exported_friends_" + DateTime.Now.ToString("yyyyMMddHHmmsstt") + ".json";
+                string fileName = "exported_friends_" + DateTime.UtcNow.ToString("yyyyMMddHHmmsstt") + ".json";
                 string filePath = Path.Combine(exportsFolder, fileName);
                 using (StreamWriter file = new(filePath))
                 {
